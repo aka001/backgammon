@@ -1,0 +1,34 @@
+TEAM MEMBERS:
+Akash Agrawall(201202061)
+Gaurav Parida(201202037)
+
+ReadME of Backgammon AI Assignment Part2
+
+In our program i am using Expectiminmax Search to do a 1 ply search over the tree the generate the reults of the next move..
+
+Important Assumptions
+--If the bar is empty then empty string is taken as input
+--If beating off occurs in a given move then it is represented as 'O'
+
+Initially I find all the possible states with reference to the given input upto depth of 2 level
+After finding all the states i defined an evaluation function such that the average of the 
+level 1 is taken and the maximum of them is taken as the max value in the root of the tree.
+
+Evaluation Function:
+	Paramaters Used:
+		a)No of blots of white(i.e  my checkers)
+		b)no of blots of opponent checkers
+		c)no of anchors of white which are on the opponents homeboard
+		d)no of anchors of white which are present anywhere(i.e. outside home board)
+		e)anchors of white on 18 and 20
+		f)pipcount of the stage
+		g)If bearing off takes place then we use a greedy approach to remove the checkers as soon as possible.
+		
+	Now my evaluation function is as follows
+	
+		calc=10*enemy_blot+800*enemy_bar-400*holding+80*anchor-200*pip-50*(my_blot)-1500*white_checker_getting_removed;
+
+
+ 
+Additional Features:
+ The Expectiminmax works on a 1 ply search giving the appropriate results hopefully.	
